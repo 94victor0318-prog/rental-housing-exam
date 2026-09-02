@@ -1,0 +1,56 @@
+﻿<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>租賃住宅管理人員資格訓練測驗考古題互動學習平台</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <!-- 頂部導航列 -->
+  <header>
+    <div class="header-container">
+      <div class="logo-brand" onclick="switchTab('home')">
+        <span class="logo-badge">證照題庫</span>
+        <div>
+          <div class="logo-title">🏛️ 租賃住宅管理人員測驗</div>
+          <span class="logo-subtitle">正修科技大學 · 專業助教學習輔導平台</span>
+        </div>
+      </div>
+
+      <nav class="main-nav">
+        <button class="nav-btn active" data-tab="home" onclick="switchTab('home')">🏠 首頁</button>
+        <button class="nav-btn" data-tab="practice" onclick="switchTab('practice')">📖 章節刷題</button>
+        <button class="nav-btn" data-tab="exam" onclick="switchTab('exam', 50)">🏆 模擬測驗</button>
+        <button class="nav-btn" data-tab="wrong" onclick="switchTab('wrong')">💡 錯題本</button>
+        <button class="nav-btn" data-tab="bookmarks" onclick="switchTab('bookmarks')">⭐ 收藏</button>
+        <button class="nav-btn" data-tab="search" onclick="switchTab('search')">🔍 法規檢索</button>
+        <button class="nav-btn" data-tab="analytics" onclick="switchTab('analytics')">📊 戰報</button>
+      </nav>
+
+      <div class="header-tools">
+        <button id="themeToggleBtn" class="tool-btn">🌙 深色</button>
+      </div>
+    </div>
+  </header>
+
+  <!-- 主內容區 -->
+  <main id="mainContent">
+    <!-- 頁面內容將由 app.js 動態渲染 -->
+  </main>
+
+  <!-- 頁尾 -->
+  <footer>
+    <p>© 2026 租賃住宅管理人員資格訓練題庫系統 · 專為正修科技大學同學量身打造之學習助教工具</p>
+    <p style="margin-top: 0.25rem; font-size: 0.75rem; opacity: 0.75;">法規基準：內政部地政司、全國法規資料庫、中華民國租賃住宅服務商業同業公會全國聯合會</p>
+  </footer>
+
+  <!-- 腳本引入 -->
+  <script src="js/questions.js"></script>
+  <script src="js/app.js"></script>
+</body>
+</html>
