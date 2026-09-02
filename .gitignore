@@ -1,0 +1,33 @@
+﻿# OS 暫存檔
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+$RECYCLE.BIN/
+.DS_Store
+
+# 環境與金鑰
+.env
+.env.local
+*.key
+*.pem
+
+# Python & Node 暫存
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.pytest_cache/
+node_modules/
+dist/
+build/
+
+# 暫存與快取
+temp/
+tmp/
+temp_*
+*.tmp
+*.log
+
+# Obsidian 工作區與快取設定
+.obsidian/workspace*
+.obsidian/cache*
