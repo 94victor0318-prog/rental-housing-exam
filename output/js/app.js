@@ -1,4 +1,4 @@
-﻿
+
 // 租賃住宅管理人員測驗系統核心邏輯
 const AppState = {
   activeTab: "home",
@@ -116,19 +116,28 @@ function renderHome(container) {
       <div class="mode-card" onclick="switchTab('exam', 50)">
         <div>
           <div class="mode-icon-box" style="background: #fee2e2; color: #b91c1c;">🏆</div>
-          <h3>標準全真模擬考</h3>
-          <p>模擬正式證照考試規範（及格門檻 60 分），50 題全方位考科落點診斷。</p>
+          <h3>標準實戰模擬考</h3>
+          <p>模擬正式證照考試規範（及格門檻 60 分），50 題考科落點精準診斷。</p>
         </div>
         <span class="mode-badge" style="background: #fee2e2; color: #b91c1c;">50 題 · 限時 60 分</span>
+      </div>
+
+      <div class="mode-card" onclick="switchTab('exam', 100)">
+        <div>
+          <div class="mode-icon-box" style="background: #fdf2f8; color: #db2777;">💯</div>
+          <h3>100 題結訓全真模考</h3>
+          <p>完全比照官方正式結訓 100 題測驗，涵蓋 10 大官方章節，沉浸式考前衝刺。</p>
+        </div>
+        <span class="mode-badge" style="background: #fdf2f8; color: #db2777;">100 題 · 限時 90 分</span>
       </div>
 
       <div class="mode-card" onclick="switchTab('practice')">
         <div>
           <div class="mode-icon-box" style="background: #dcfce7; color: #15803d;">📖</div>
           <h3>分主題章節刷題</h3>
-          <p>依據 6 大法規單元逐題精讀，支援「即選即看詳解與法條依據」。</p>
+          <p>依據 10 大官方章節單元逐題精讀，支援「即選即看詳解與法條依據」。</p>
         </div>
-        <span class="mode-badge" style="background: #dcfce7; color: #15803d;">6 大主題分類</span>
+        <span class="mode-badge" style="background: #dcfce7; color: #15803d;">10 大官方章節</span>
       </div>
 
       <div class="mode-card" onclick="switchTab('wrong')">
@@ -366,7 +375,7 @@ function initExamMode(container, questionCount = 50) {
   const shuffled = [...QUESTION_DATABASE].sort(() => Math.random() - 0.5);
   AppState.questions = shuffled.slice(0, Math.min(questionCount, shuffled.length));
 
-  const totalMinutes = questionCount <= 20 ? 25 : 60;
+  const totalMinutes = questionCount <= 20 ? 25 : (questionCount <= 50 ? 60 : 90);
   AppState.timerSeconds = totalMinutes * 60;
 
   clearInterval(AppState.timerInterval);
