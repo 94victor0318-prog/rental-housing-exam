@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="租賃住宅管理人員資格訓練與換證測驗考古題互動學習平台（115.02.06 最新官方題庫 1,345 題完整收錄，含 996 題全真版、966 題初訓標準版、379 題換證版）">
+  <title>租賃住宅管理人員資格訓練測驗考古題互動學習平台｜115.02.06 最新官方題庫</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <!-- 頂部導航列 -->
+  <header>
+    <div class="header-container">
+      <div class="logo-brand" onclick="switchTab('home')">
+        <span class="logo-badge">115.02.06 最新版</span>
+        <div>
+          <div class="logo-title">🏛️ 租賃住宅管理人員測驗系統</div>
+          <span class="logo-subtitle">正修科技大學 · 專業助教互動輔導平台</span>
+        </div>
+      </div>
+
+      <nav class="main-nav" aria-label="主要功能導覽">
+        <button class="nav-btn active" data-tab="home" onclick="switchTab('home')">🏠 首頁</button>
+        <button class="nav-btn" data-tab="practice" onclick="switchTab('practice')">📖 章節刷題</button>
+        <button class="nav-btn" data-tab="exam" onclick="switchTab('exam', 50)">🏆 模擬測驗</button>
+        <button class="nav-btn" data-tab="wrong" onclick="switchTab('wrong')">💡 錯題本 <span id="navWrongBadge" class="nav-mini-badge" style="display:none;">0</span></button>
+        <button class="nav-btn" data-tab="bookmarks" onclick="switchTab('bookmarks')">⭐ 收藏 <span id="navStarBadge" class="nav-mini-badge" style="display:none;">0</span></button>
+        <button class="nav-btn" data-tab="search" onclick="switchTab('search')">🔍 法規檢索</button>
+        <button class="nav-btn" data-tab="analytics" onclick="switchTab('analytics')">📊 戰報與資源</button>
+      </nav>
+
+      <div class="header-tools">
+        <select id="headerBankSelector" class="bank-select" title="切換官方題庫版本" onchange="changeQuestionBank(this.value)">
+          <option value="full996">🏆 996 題全真版</option>
+          <option value="qual966">🎓 966 題初訓版</option>
+          <option value="renew379">🔄 379 題換證版</option>
+          <option value="all1345">🔥 1,345 題全集</option>
+        </select>
+        <button id="connectInfoBtn" class="tool-btn" title="查看永久書籤網址與手機跨裝置連線 QR Code" onclick="openConnectionModal()">📱 手機/網址</button>
+        <button id="themeToggleBtn" class="tool-btn" title="切換深淺色主題">🌙 深色</button>
+      </div>
+    </div>
+  </header>
+
+  <!-- 主內容區 -->
+  <main id="mainContent">
+    <!-- 頁面內容將由 app.js 動態渲染 -->
+  </main>
+
+  <!-- 頁尾 -->
+  <footer>
+    <p>© 2026 租賃住宅管理人員資格訓練與換證題庫系統 · 專為正修科技大學同學量身打造之專業助教學習工具</p>
+    <p style="margin-top: 0.35rem; font-size: 0.78rem; opacity: 0.8;">
+      法規與題庫基準：內政部地政司、全國法規資料庫、中華民國租賃住宅服務商業同業公會全國聯合會（115.02.06 最新公告更新版）
+    </p>
+  </footer>
+
+  <!-- 腳本引入 -->
+  <script src="js/questions.js"></script>
+  <script src="js/app.js"></script>
+</body>
+</html>
