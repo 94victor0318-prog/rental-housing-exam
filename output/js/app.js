@@ -1609,6 +1609,60 @@ document.addEventListener("keydown", e => {
   }
 });
 
+async function openConnectionModal() {
+  let existing = document.getElementById("connectionModalOverlay");
+  if (existing) existing.remove();
+
+  const permanentCloudUrl = "https://94victor0318-prog.github.io/rental-housing-exam/";
+  const localUrl = "http://localhost:5500/";
+  const qrImgHtml = `<img src="https://api.qrserver.com/v1/create-qr-code/?size=180x180&data=${encodeURIComponent(permanentCloudUrl)}" alt="手機掃描永久雲端網址 QR Code" style="width:160px;height:160px;border-radius:12px;border:4px solid #fff;box-shadow:0 4px 14px rgba(0,0,0,0.12);" />`;
+
+  const modal = document.createElement("div");
+  modal.id = "connectionModalOverlay";
+  modal.style.cssText = "position:fixed;inset:0;background:rgba(15,23,42,0.65);backdrop-filter:blur(4px);z-index:9999;display:flex;align-items:center;justify-content:center;padding:1rem;";
+  modal.onclick = (ev) => { if (ev.target === modal) modal.remove(); };
+
+  modal.innerHTML = `
+    <div style="background:var(--bg-card);color:var(--text-primary);max-width:560px;width:100%;border-radius:18px;padding:1.5rem;box-shadow:0 20px 50px rgba(0,0,0,0.3);border:1px solid var(--border-color);">
+      <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:1rem;">
+        <h3 style="margin:0;font-size:1.18rem;font-weight:800;">🌐 永久雲端連網網址 ＆ 手機跨裝置 QR Code</h3>
+        <button onclick="document.getElementById('connectionModalOverlay').remove()" style="background:none;border:none;font-size:1.3rem;cursor:pointer;color:var(--text-secondary);">✕</button>
+      </div>
+
+      <div style="background:rgba(16,185,129,0.08);border:1px solid rgba(16,185,129,0.28);border-radius:12px;padding:1rem;margin-bottom:1rem;">
+        <div style="font-weight:800;color:#10b981;margin-bottom:0.35rem;">⭐ 1. GitHub Pages 永久雲端網址（24 小時全年無休、電腦關機也能連！）</div>
+        <div style="font-size:0.84rem;color:var(--text-secondary);margin-bottom:0.65rem;">
+          此網址部署於 GitHub 全球雲端 CDN，<strong>網址永遠固定不變、絕不過期</strong>！請按 <code>Ctrl + D</code> 將此網址加入 Chrome 書籤列，手機／平板掃描下方 QR Code 即可隨時刷題：
+        </div>
+        <div style="display:flex;gap:0.5rem;align-items:center;margin-bottom:0.9rem;">
+          <input type="text" readonly value="${permanentCloudUrl}" style="flex:1;padding:0.5rem 0.75rem;border-radius:8px;border:1px solid var(--border-color);background:var(--bg-main);color:var(--text-primary);font-family:monospace;font-size:0.88rem;" />
+          <button class="btn btn-primary" style="padding:0.5rem 0.9rem;font-size:0.85rem;white-space:nowrap;background:#10b981;border-color:#10b981;" onclick="copyTextHelper('${permanentCloudUrl}', this)">複製永久網址</button>
+        </div>
+        <div style="text-align:center;">
+          ${qrImgHtml}
+        </div>
+      </div>
+
+      <div style="background:rgba(37,99,235,0.08);border:1px solid rgba(37,99,235,0.25);border-radius:12px;padding:0.9rem 1rem;">
+        <div style="font-weight:800;color:var(--primary-color);margin-bottom:0.3rem;">🖥️ 2. 電腦本機開發網址</div>
+        <div style="display:flex;gap:0.5rem;align-items:center;">
+          <input type="text" readonly value="${localUrl}" style="flex:1;padding:0.45rem 0.75rem;border-radius:8px;border:1px solid var(--border-color);background:var(--bg-main);color:var(--text-primary);font-family:monospace;font-size:0.88rem;" />
+          <button class="btn btn-primary" style="padding:0.45rem 0.85rem;font-size:0.84rem;white-space:nowrap;" onclick="copyTextHelper('${localUrl}', this)">複製本機</button>
+        </div>
+      </div>
+    </div>
+  `;
+  document.body.appendChild(modal);
+}
+
+function copyTextHelper(text, btnEl) {
+  navigator.clipboard.writeText(text).then(() => {
+    const old = btnEl.textContent;
+    btnEl.textContent = "✅ 已複製";
+    setTimeout(() => { btnEl.textContent = old; }, 1800);
+  });
+}
+
 document.addEventListener("DOMContentLoaded", () => {
   loadLocalData();
   const themeBtn = document.getElementById("themeToggleBtn");
@@ -1620,3 +1674,4 @@ document.addEventListener("DOMContentLoaded", () => {
   }
   switchTab("home");
 });
+

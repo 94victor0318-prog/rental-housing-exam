@@ -1,4 +1,4 @@
-﻿# OS 暫存檔
+# OS 暫存檔
 Thumbs.db
 ehthumbs.db
 Desktop.ini
@@ -31,3 +31,5 @@ temp_*
 # Obsidian 工作區與快取設定
 .obsidian/workspace*
 .obsidian/cache*
+output/tunnel_info.json
+

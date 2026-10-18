@@ -17,8 +17,8 @@
 | 項目 | 路徑 / 連結 | 說明 |
 | :--- | :--- | :--- |
 | **本地專案路徑** | `G:\我的雲端硬碟\租賃住宅管理人員資格訓練題庫 測驗考古題` | Google Drive 同步本地工作區 |
-| **本地預覽與雲端部署網址** | `http://localhost:5500/` | 本地開發伺服器與公開對外預覽連結 |
-| **GitHub 倉庫 URL** | *待登入 GitHub 帳號後綁定遠端 (origin)* | 遠端程式碼與題庫版控 |
+| **GitHub Pages 永久網址** | `https://94victor0318-prog.github.io/rental-housing-exam/` | 24 小時全年無休全球 CDN 永久連網網址 |
+| **GitHub 倉庫 URL** | `https://github.com/94victor0318-prog/rental-housing-exam` | 遠端程式碼與題庫版控 (origin) |
 | **Obsidian 資料夾路徑** | `G:\我的雲端硬碟\租賃住宅管理人員資格訓練題庫 測驗考古題\obsidian` | 筆記與工作進度同步目錄 |
 
 ## 4. 常用開工 / 收工流程
